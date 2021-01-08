@@ -9,7 +9,7 @@ namespace ReposistryLayer.Interfaces
     {
         bool AddCart(CartItem productId);
         bool UpdateCart(CartItem productId);
-        List<Product> GetCartItems(string LoggedInUser);
+        List<CartItem> GetCartItems(string LoggedInUser);
         bool RemoveCartItem(CartItem product_id);
         bool ReduceBookQuantity(CartItem product_id);
     }

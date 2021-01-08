@@ -10,7 +10,7 @@ namespace BusinessLayer.Interfaces
         bool AddCart(CartItem productId);
         bool UpdateCart(CartItem productId);
 
-        List<Product> GetCartItems(string LoggedInUser);
+        List<CartItem> GetCartItems(string LoggedInUser);
         bool RemoveCartItem(CartItem productId);
         bool ReduceBookQuantity(CartItem productId);
 

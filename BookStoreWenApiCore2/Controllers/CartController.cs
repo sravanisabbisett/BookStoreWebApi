@@ -67,7 +67,6 @@ namespace BookStoreWenApiCore2.Controllers
                 var claims = HttpContext.User.Claims.ToList();
                 var email = claims[0].ToString().Split("emailaddress:");
                 cart.loginUser = email[1].Trim();
-                cart.quantityToBuy = 1;
                 if (this.cartBL.UpdateCart(cart))
                 {
                     return this.Ok(new { success = true, Message = "CartItem Updated successfully" });

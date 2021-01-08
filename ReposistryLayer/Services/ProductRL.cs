@@ -20,7 +20,7 @@ namespace ReposistryLayer.Services
         {
             try
             {
-                List<Product> list = (from e in this.context.products 
+                List<Product> list = (from e in this.context.products
                                       select new Product
                                       {
                                           product_id = e.product_id,
@@ -30,9 +30,10 @@ namespace ReposistryLayer.Services
                                           description = e.description,
                                           quantity = e.quantity,
                                           price = e.price,
-                                          discountPrice = e.discountPrice
+                                          discountPrice = e.discountPrice,
                                           
                                       }).ToList<Product>();
+               
 
                 return list;
             }
