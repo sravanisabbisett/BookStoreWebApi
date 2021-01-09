@@ -17,5 +17,6 @@ namespace commonLayerr.Models
         public Product Product { get; set; }
         public string loginUser { get; set; }
         public int quantityToBuy { get; set; }
+        public bool addedTocart { get; set; }
     }
 }

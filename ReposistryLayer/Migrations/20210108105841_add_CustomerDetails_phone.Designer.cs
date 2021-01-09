@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Repository;
 
 namespace ReposistryLayer.Migrations
 {
     [DbContext(typeof(BookStoreContext))]
-    partial class BookStoreContextModelSnapshot : ModelSnapshot
+    [Migration("20210108105841_add_CustomerDetails_phone")]
+    partial class add_CustomerDetails_phone
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -54,8 +56,6 @@ namespace ReposistryLayer.Migrations
 
                     b.Property<int?>("NewOrderorderId");
 
-                    b.Property<bool>("addedTocart");
-
                     b.Property<string>("loginUser");
 
                     b.Property<int>("product_id");
@@ -80,7 +80,8 @@ namespace ReposistryLayer.Migrations
                     b.Property<string>("Fullname")
                         .IsRequired();
 
-                    b.Property<string>("addressType");
+                    b.Property<string>("addressType")
+                        .IsRequired();
 
                     b.Property<string>("city")
                         .IsRequired();
@@ -92,9 +93,6 @@ namespace ReposistryLayer.Migrations
                         .IsRequired();
 
                     b.Property<string>("phone")
-                        .IsRequired();
-
-                    b.Property<string>("pincode")
                         .IsRequired();
 
                     b.Property<string>("state")
@@ -125,8 +123,6 @@ namespace ReposistryLayer.Migrations
                     b.Property<int>("product_id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<bool>("addedTocart");
 
                     b.Property<string>("admin_user_id");
 

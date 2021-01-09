@@ -12,12 +12,17 @@ namespace commonLayerr.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int CustomerId { get; set; }
         [Required]
-        public string addressType { get; set; }
-
+        public string Fullname { get; set; }
         [Required]
-        public string email { get; set; }
+        public string phone { get; set; }
+        [Required]
+        public string pincode { get; set; }
+        public string addressType { get; set; }
+        
         [Required]
         public string fullAddress { get; set; }
+       [Required]
+        public string email { get; set; }
 
         [Required]
         public string city { get; set; }

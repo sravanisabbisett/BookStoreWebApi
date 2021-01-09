@@ -9,6 +9,8 @@ namespace commonLayerr.Models
 {
     public class Product
     {
+        public bool addedToCart;
+
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int product_id { get; set; }
@@ -31,6 +33,7 @@ namespace commonLayerr.Models
         public long price { get; set; }
 
         public long discountPrice { get; set; }
+        public bool addedTocart { get; set; }
         public DateTime? createdAt { get; set; }
         public DateTime? updatedAt { get; set; }
     }
