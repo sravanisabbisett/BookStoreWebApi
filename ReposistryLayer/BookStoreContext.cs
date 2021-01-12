@@ -22,6 +22,7 @@ namespace Repository
         public DbSet<NewOrder> newOrders { get; set; }
         public DbSet<CustomerDetails> customerDetails { get; set; }
         public DbSet<CartItem> cartItems { get; set; }
+        public DbSet<Wishlist> wishlists { get; set; }
 
     }
     

@@ -211,5 +211,42 @@ namespace BookStoreWenApiCore2.Controllers
 
             }
         }
+
+
+        [HttpPost("ClearCartItem")]
+        public IActionResult clearCartItems()
+        {
+            try
+            {
+                var claims = HttpContext.User.Claims.ToList();
+                var email = claims[0].ToString().Split("emailaddress:");
+                string LoggedInUser = email[1].Trim();
+                var result = this.cartBL.ClearCartItems(LoggedInUser);
+                if (result)
+                {
+                    return this.Ok(new { success = true, Message = "Claering all cartItems sucesss", result });
+                }
+                else
+                {
+                    return StatusCode(StatusCodes.Status500InternalServerError,
+                        new { success = false, Message = "Cart is not cleared " });
+                }
+            }
+            catch (Exception e)
+            {
+                var sqlException = e.InnerException as SqlException;
+
+                if (sqlException.Number == 2601 || sqlException.Number == 2627)
+                {
+                    return StatusCode(StatusCodes.Status409Conflict,
+                        new { success = false, ErrorMessage = "Email id not exists" });
+                }
+                else
+                {
+                    return this.BadRequest(new { success = false, Message = e.Message });
+                }
+
+            }
+        }
     }
 }

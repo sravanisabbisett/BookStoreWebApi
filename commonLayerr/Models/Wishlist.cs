@@ -6,18 +6,16 @@ using System.Text;
 
 namespace commonLayerr.Models
 {
-    public class CartItem
+    public class Wishlist
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int cartItem_id { get; set; }
+        public int wishList_id { get; set; }
         public int product_id { get; set; }
 
         [ForeignKey("product_id")]
         public Product Product { get; set; }
         public string loginUser { get; set; }
-        public int quantityToBuy { get; set; }
-        public bool addedTocart { get; set; }
-        public long price { get; set; }
+        public bool addedToCart { get; set; }
     }
 }

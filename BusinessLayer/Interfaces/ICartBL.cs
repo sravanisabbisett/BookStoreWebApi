@@ -13,7 +13,7 @@ namespace BusinessLayer.Interfaces
         List<CartItem> GetCartItems(string LoggedInUser);
         bool RemoveCartItem(CartItem productId);
         bool ReduceBookQuantity(CartItem productId);
-
+        bool ClearCartItems(string LoggedInUser);
         //AdminUserRegistration AdminLogin(AdminUserLogin login);
     }
 }

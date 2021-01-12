@@ -74,5 +74,17 @@ namespace BusinessLayer.Services
                 throw e;
             }
         }
+
+        public bool ClearCartItems(string LoggedInUser)
+        {
+            try
+            {
+                return this.cartRL.ClearCartItems(LoggedInUser);
+            }
+            catch(Exception e)
+            {
+                throw e;
+            }
+        }
     }
 }

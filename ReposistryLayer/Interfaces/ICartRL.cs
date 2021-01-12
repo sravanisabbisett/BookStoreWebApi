@@ -12,5 +12,6 @@ namespace ReposistryLayer.Interfaces
         List<CartItem> GetCartItems(string LoggedInUser);
         bool RemoveCartItem(CartItem product_id);
         bool ReduceBookQuantity(CartItem product_id);
+        bool ClearCartItems(string LoggedInUser);
     }
 }
